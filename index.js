@@ -1,14 +1,14 @@
 const express = require('express'),
     app = express(),
     port = 3000,
-    esInterface = require('./esHelper');
+    esInterface = require('./interfaces/es');
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.post('/', (req, res) => {
     // TODO: covert user location to latitude, longitude
     // google maps api
-    
+
     // TODO: query elasticsearch to retrieve points in range
     // esInterface.query()
 
