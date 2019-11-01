@@ -1,0 +1,22 @@
+{
+  "name": "points-to-map",
+  "version": "1.0.0",
+  "description": "webapp for serving users nearby locations based on their input location",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayukuse24/points-to-map.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayukuse24/points-to-map/issues"
+  },
+  "homepage": "https://github.com/mayukuse24/points-to-map#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
