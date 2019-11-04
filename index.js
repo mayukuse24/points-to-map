@@ -1,24 +1,33 @@
 const express = require('express'),
     app = express(),
-    port = 3000,
-    esInterface = require('./interfaces/es');
+    bodyParser = require('body-parser')
+    esInterface = require('./interfaces/es'),
+    port = 3000;
 
-app.get('/', (req, res) => res.send('Hello World!'));
+// Used for parsing incoming request as JSON
+app.use(bodyParser.json());
+
+app.get('/', (req, res) => res.send('Welcome to points to map!'));
 
 app.post('/', (req, res) => {
+    // TODO: validate request
+    console.log(req.body);
+    
     // TODO: covert user location to latitude, longitude
     // google maps api
 
-    // TODO: query elasticsearch to retrieve points in range
-    // esInterface.query()
+    // TODO: query elasticsearch to retrieve locations in range
+    esInterface.getLocationsInRange({ latitude: 47.29762, longitude : 8.3086}, 10, function (err, locations) {
+        if (err) { return res.status(404).send(err); } // TODO: better error handling/status code
 
-    // TODO: send response to frontend for displaying points
-    res.send('hi there. This is a post request');
+        // send response to frontend for displaying points
+        res.send(locations);
+    });
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}!`)
+    console.log(`Webserver listening on port ${port}!`) // TODO: need log levels
 
-    // TODO: create connection to elasticsearch server
-    // esInterface.connect()
+    // Create connection to elasticsearch server
+    esInterface.connect()
 });
