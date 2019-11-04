@@ -11,9 +11,15 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => res.send('Welcome to points to map!'));
 
 app.post('/', (req, res) => {
-    var address;
+    var address,
+        reqBody = _.get(req, 'body');;
+    
     // TODO: validate request
-    address = _.get(req.body.address)
+    console.log(req.body);
+    
+    if (!reqBody) { return res.status(400).send('No body in request'); };
+
+    address = _.get(reqBody, 'address');
     
     if (!address) { return res.status(400).send('Address not provided or incorrect request format'); }
 
