@@ -1,5 +1,5 @@
-const ES = require('elasticsearch'),
-    _ = require('lodash');
+const _ = require('lodash');
+    ES = require('elasticsearch'),
 
 module.exports = {
     client: undefined,
