@@ -14,7 +14,7 @@ module.exports = {
 
     getLocationsInRange: function ({latitude, longitude}, range = 10, cb) {
         if (!this.client) { return cb(new Error('Client connection is not established')); }
-        // TODO: perform checks on range
+        // TODO: perform checks on range, latitude, longitude
 
         // TODO: get query from queries folder
         this.client.search({
