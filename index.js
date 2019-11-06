@@ -23,9 +23,43 @@ app.post('/', (req, res) => {
     
     if (!address) { return res.status(400).send('Address not provided or incorrect request format'); }
 
+    
+    
     // TODO: covert user provided address to latitude, longitude
     // google maps api
+    var NodeGeocoder = require('node-geocoder');
+ 
+    var options = {
+    provider: 'google',
+ 
+     // Optional depending on the providers
+    httpAdapter: 'https', // Default
+    // TODO provide API key
+    apiKey: ' ', // for Mapquest, OpenCage, Google Premier
+    formatter: null         // 'gpx', 'string', ...
+    };
+    
+    
+   var geocoder = NodeGeocoder(options);
+     
+   var geocoder = new google.maps.Geocoder();
+   var address = " ";
 
+    geocoder.geocode( { 'address': address}, function(results, status) 
+    {
+
+        if (status == ) 
+        {
+            var latitude = results[0].geometry.location.lat();
+            var longitude = results[0].geometry.location.lng();
+            alert(latitude);
+        } 
+    });  
+    
+ 
+    
+    
+    
     // Query elasticsearch to retrieve locations in range. TODO: update long/lat input
     esInterface.getLocationsInRange({ latitude: 47.29762, longitude : 8.3086}, 10, function (err, locations) {
         if (err) { return res.status(404).send(err); } // TODO: better error handling/status code
