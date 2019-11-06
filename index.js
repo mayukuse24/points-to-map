@@ -3,7 +3,10 @@ const _ = require('lodash'),
     app = express(),
     bodyParser = require('body-parser')
     esInterface = require('./interfaces/es'),
-    port = 3000; // TODO: pick from env variables
+    nodeGeocoder = require('node-geocoder'),
+    port = 3000; // TODO: pick from env variables 
+
+var geocoder;
 
 // Used for parsing incoming request as JSON
 app.use(bodyParser.json());
@@ -22,21 +25,42 @@ app.post('/', (req, res) => {
     address = _.get(reqBody, 'address');
     
     if (!address) { return res.status(400).send('Address not provided or incorrect request format'); }
+    
+    // Convert user provided address to latitude, longitude
+    geocoder.geocode({ 'address': address }, function (err, geolocations) {
+        if (err) { 
+            console.log('geocode error', err);
+            return res.status(400).send(err); 
+        }
 
-    // TODO: covert user provided address to latitude, longitude
-    // google maps api
-
-    // Query elasticsearch to retrieve locations in range. TODO: update long/lat input
-    esInterface.getLocationsInRange({ latitude: 47.29762, longitude : 8.3086}, 10, function (err, locations) {
-        if (err) { return res.status(404).send(err); } // TODO: better error handling/status code
-
-        // send response to frontend for displaying points
-        res.send(locations);
+        // TODO: multiple geolocations can exist for an address, need to select the right one
+        let point = {
+            latitude: geolocations[0].latitude,
+            longitude: geolocations[0].longitude
+        }
+    
+        // Query elasticsearch to retrieve locations in range
+        esInterface.getLocationsInRange(point, 10, function (err, locations) {
+            if (err) { return res.status(404).send(err); } // TODO: better error handling/status code
+    
+            // Send response to frontend for displaying points
+            return res.send(locations);
+        });
     });
 });
 
 app.listen(port, () => {
     console.log(`Webserver listening on port ${port}!`) // TODO: need log levels
+
+    var options = {
+        provider: 'opencage',
+        httpAdapter: 'https',
+        // TODO provide API key
+        apiKey: '',
+        formatter: null
+    };
+
+    geocoder = nodeGeocoder(options);
 
     // Create connection to elasticsearch server
     esInterface.connect()
