@@ -4,7 +4,7 @@ const _ = require('lodash'),
     bodyParser = require('body-parser')
     esInterface = require('./interfaces/es'),
     nodeGeocoder = require('node-geocoder'),
-    port = 3000; // TODO: pick from env variables 
+    config = require('./config');
 
 var geocoder;
 
@@ -49,14 +49,15 @@ app.post('/', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`Webserver listening on port ${port}!`) // TODO: need log levels
+app.listen(config.port, () => {
+    // TODO: check for config initialization
+    console.log(`Webserver listening on port ${config.port}!`) // TODO: need log levels
 
     var options = {
         provider: 'opencage',
         httpAdapter: 'https',
         // TODO provide API key
-        apiKey: '',
+        apiKey: config.openCageKey,
         formatter: null
     };
 

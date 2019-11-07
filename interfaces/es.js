@@ -1,12 +1,13 @@
 const _ = require('lodash');
     ES = require('elasticsearch'),
+    config = require('../config')
 
 module.exports = {
     client: undefined,
 
     connect: function () {
         this.client = new ES.Client({
-            host: 'https://search-geopoints-27r7jwdphujaer34pkq5u5znxe.us-east-2.es.amazonaws.com', // TODO: pick from env variables
+            host: config.esDomain, // TODO: pick from env variables
             log: 'debug',
             apiVersion: '7.1', // use the same version of your Elasticsearch instance
         });
