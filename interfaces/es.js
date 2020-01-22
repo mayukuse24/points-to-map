@@ -22,23 +22,38 @@ module.exports = {
             index: 'australia',
             body: {
                 "query": {
-                    "bool" : {
-                        "must" : {
-                            "match_all" : {}
-                        },
-                        "filter" : {
-                            "geo_distance" : {
-                                "distance" : `${range}km`,
-                                "location" : {
-                                    "lat" : latitude,
-                                    "lon" : longitude
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            size: 20 // Max points returned TODO: change this to a dynamic value/parameter
+                   "bool" : {
+                       "must" : {
+                           "match_all" : {}
+                       },
+                       "filter" : {
+                           "geo_distance" : {
+                               "distance" : `${range}km`,
+                               "location" : {
+                                   "lat" : latitude,
+                                   "lon" : longitude
+                               }
+                           }
+                       }
+                   }
+               },
+               "sort" : [
+                   {
+                       "_geo_distance" : {
+                           "location" : {
+                               "lat" : latitude,
+                               "lon" : longitude
+                           },
+                           "order" : "asc",
+                           "unit" : "km",
+                           "mode" : "min",
+                           "distance_type" : "arc",
+                           "ignore_unmapped": true
+                       }
+                   }
+               ]
+           },
+            size: 100 // Max points returned TODO: change this to a dynamic value/parameter
         }, function (err, res) {
             if (err) { return cb(err); }
 
