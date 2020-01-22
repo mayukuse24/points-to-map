@@ -1,0 +1,142 @@
+[
+    {
+        "text": "SILKY OAK CRESCENT CARINDALE QLD 4152",
+        "location": {
+            "lat": -27.50578,
+            "lon": 153.10236
+        }
+    },
+    {
+        "text": "KENT STREET TENERIFFE QLD 4005",
+        "location": {
+            "lat": -27.455679,
+            "lon": 153.046285
+        }
+    },
+    {
+        "text": "DELFIN DRIVE MACGREGOR QLD 4109",
+        "location": {
+            "lat": -27.566863,
+            "lon": 153.069248
+        }
+    },
+    {
+        "text": "EDMONDSTONE STREET SOUTH BRISBANE QLD 4101",
+        "location": {
+            "lat": -27.481625,
+            "lon": 153.016879
+        }
+    },
+    {
+        "text": "HEIDELBERG STREET EAST BRISBANE QLD 4169",
+        "location": {
+            "lat": -27.479732,
+            "lon": 153.046738
+        }
+    },
+    {
+        "text": "PARK AVENUE EAST BRISBANE QLD 4169",
+        "location": {
+            "lat": -27.477898,
+            "lon": 153.042649
+        }
+    },
+    {
+        "text": "BELL STREET KANGAROO POINT QLD 4169",
+        "location": {
+            "lat": -27.47927,
+            "lon": 153.035613
+        }
+    },
+    {
+        "text": "SELSEY STREET RUNCORN QLD 4113",
+        "location": {
+            "lat": -27.58816,
+            "lon": 153.071544
+        }
+    },
+    {
+        "text": "LINDISFARNE STREET CARINDALE QLD 4152",
+        "location": {
+            "lat": -27.493428,
+            "lon": 153.107245
+        }
+    },
+    {
+        "text": "STRATTON STREET NEWSTEAD QLD 4006",
+        "location": {
+            "lat": -27.45245,
+            "lon": 153.041747
+        }
+    },
+    {
+        "text": "PORTULACA STREET MACGREGOR QLD 4109",
+        "location": {
+            "lat": -27.5649,
+            "lon": 153.0665
+        }
+    },
+    {
+        "text": "JARROTT STREET CHELMER QLD 4068",
+        "location": {
+            "lat": -27.515762,
+            "lon": 152.970751
+        }
+    },
+    {
+        "text": "GRAYS ROAD HAMILTON QLD 4007",
+        "location": {
+            "lat": -27.438198,
+            "lon": 153.057704
+        }
+    },
+    {
+        "text": "GREY STREET SOUTH BRISBANE QLD 4101",
+        "location": {
+            "lat": -27.474493,
+            "lon": 153.018617
+        }
+    },
+    {
+        "text": "CLAUSEN STREET MOUNT GRAVATT EAST QLD 4122",
+        "location": {
+            "lat": -27.532505,
+            "lon": 153.078444
+        }
+    },
+    {
+        "text": "HUNTER STREET INDOOROOPILLY QLD 4068",
+        "location": {
+            "lat": -27.504654,
+            "lon": 152.977823
+        }
+    },
+    {
+        "text": "FRASER STREET GRACEVILLE QLD 4075",
+        "location": {
+            "lat": -27.522967,
+            "lon": 152.974856
+        }
+    },
+    {
+        "text": "ASTOR TERRACE SPRING HILL QLD 4000",
+        "location": {
+            "lat": -27.463391,
+            "lon": 153.026278
+        }
+    },
+    {
+        "text": "GOLDA AVENUE SALISBURY QLD 4107",
+        "location": {
+            "lat": -27.55747,
+            "lon": 153.038047
+        }
+    },
+    {
+        "text": "COMPTON ROAD STRETTON QLD 4116",
+        "location": {
+            "lat": -27.61132,
+            "lon": 153.062095
+        }
+    }
+]
