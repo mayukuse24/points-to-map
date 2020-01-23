@@ -5,13 +5,34 @@
 integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
 crossorigin=""></script>
 
-<div class="address">
-    <input name = "address" id="address" type="text" placeholder="Please Enter Address here"/>
-    <input type="button" id="show" name="show" value="Show" (click)="sendToECS()">
+<div class="form">
+  <input class="rcorners" name = "address" id="address" type="text" placeholder="  Please Enter Address here"/>
+  <input class="rcorners" name = "range" id="range" type="number" placeholder="  Enter Range"/>
+  <div class="tooltip">Hover over me
+    <span class="tooltiptext rcorners">
+      Short of addresses!! Try these!!
+    <table>
+    <tr>
+        <td>10 MACGEORGE PLACE CONDER ACT 2906 </td>
+        <td>20 CLIO STREET WILEY PARK NSW 2195 </td>
+    </tr>
+    <tr>
+        <td>2 QUEEN STREET STUART PARK NT 820    </td> 
+        <td>1 GEORGINA STREET NEWTOWN NSW 2042</td></tr>
+    <tr>  
+      <td>BROADBEACH BOULEVARD BROADBEACH QLD</td> 
+      <td>58A PINE STREET CAMMERAY NSW 2062</td></tr>
+    </table>
+    </span>
+  </div>
+  <div id="show"><input class="rcorners" type="button" id="showButton" name="showButton" value="Show" (click)="sendToECS()"/> </div >
 </div>
 
-<div class="map-container">
+
+<div class="map-container" style="margin-top: 50px;"> 
     <div class="map-frame">
       <div id="map"></div>
     </div>
 </div>
+
+  

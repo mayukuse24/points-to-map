@@ -1,22 +1,76 @@
 .map-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 30px;
-  }
-  
-  .map-frame {
-    border: 2px solid black;
-    height: 100%;
-  }
-  
-  #map {
-    height: 100%;
-  }
+  position: fixed;
+  top: 12px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 20px;
+}
 
-  #address{
-    width: 60%;
-    margin-left: 20px;
-  }
+.map-frame {
+  border: 2px solid black;
+  height: 100%;
+}
+
+#map {
+  height: 100%;
+}
+
+.rcorners {
+  border-radius: 25px;
+}
+
+#address{
+  width: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+    
+#show{
+    text-align: center;
+}
+
+#showButton{
+  width: 250px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  margin-left: 20px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 700px;
+  background-color: #555;
+  color: #fff;
+  background: lightblue;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  margin-left: -500px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
