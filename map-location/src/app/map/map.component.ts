@@ -11,13 +11,16 @@ import { MarkerService } from '../_services/marker.service';
 export class MapComponent implements AfterViewInit {
   private map;
   private address;
+  private range;
   constructor(private markerService: MarkerService) {
   }
 
   sendToECS(){
     this.address = document.getElementById("address");
+    this.range = document.getElementById("range");
     console.log("Address is:" +this.address.value);
-    this.markerService.sendPostRequest(this.address.value,this.map); 
+    console.log("Range is:" +this.range.value);
+    this.markerService.sendPostRequest(this.address.value,this.range.value,this.map); 
   }
 
   private initMap(): void {

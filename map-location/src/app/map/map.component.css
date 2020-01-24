@@ -12,6 +12,11 @@
   height: 100%;
 }
 
+#range{
+  width: 40px;
+  text-align: center;
+}
+
 #map {
   height: 100%;
 }
