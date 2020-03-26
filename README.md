@@ -3,6 +3,8 @@
 When user provides a (readable) address, it returns all locations within a certain range of the input from a predefined set of addresses. 
 
 ## Project Architecture:
+![geolocater-architecture](images/arch.png):
+
 ### Database:
 Used a Python script to parse and load the given addresses; temporary measure and not recommended as a permanent solution.
 Used fault tolerant, distributed, search engine like Elasticsearch to store and retrieve set of addresses 
